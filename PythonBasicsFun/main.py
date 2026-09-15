@@ -51,7 +51,17 @@ for idx, val in enumerate(scores):
 # Q9: How do we represent two-dimensional data using lists?
 # nested lists, [row][column], nested loops
 
+# 2D lists (nested list)
+def pretty_print(table):
+    for row in table:
+        for value in row:
+            print(value, end=" ")
+        print()
+    print()
 
+matrix = [[0, 1, 2], [3, 4, 5]]
+print(matrix[0], matrix[0][1])
+pretty_print(matrix)
 # Q10: How can we create a list more concisely?
 # list comprehension
 # [expression for item in iterable if condition]
@@ -100,3 +110,35 @@ count(number,4)
 remove_number(number,8)
 print(number)
 '''
+# FILE IO
+# open a file and read its contents into memory
+# lets start with a CSV (comma separated value)
+import csv
+def convert_num(values):
+    for i in range(len(values)):
+        try:
+            values[i]=float(values[i])
+        except ValueError as e:
+            # failure to convert
+            print(e)
+
+
+def load_table(file):
+    table=[]
+    with open(file,"r") as infile:
+        reader=csv.reader(infile)
+        for row in reader:
+            convert_num(row)
+            table.append(row)
+        return table
+
+def write(table,filename):
+    with open(filename,"w") as outfile:
+        writer=csv.writer(outfile)
+        writer.writerows(table)
+
+
+table=load_table("data.csv")
+print(table)
+write(table,"data_copy_2.csv")
+
