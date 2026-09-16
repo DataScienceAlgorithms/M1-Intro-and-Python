@@ -136,9 +136,46 @@ def write(table,filename):
     with open(filename,"w") as outfile:
         writer=csv.writer(outfile)
         writer.writerows(table)
+#table=load_table("data.csv")
+#print(table)
+#write(table,"data_copy_2.csv")
+'''
+Practice: BankAccount Class
+
+Create a class called BankAccount that represents a bank account.
+Your BankAccount class should:
+1. Use __init__() to initialize the following attributes:
+   - owner: the name of the account owner
+   - balance: the current account balance
+2. Define a deposit(amount) method that adds the given amount
+   to the account balance.
+3. Define a withdraw(amount) method that:
+   - subtracts the amount from the balance if sufficient funds
+     are available.
+   - prints "Insufficient funds" if the withdrawal amount is
+     greater than the current balance.
+4. Define __str__() to return a string containing the owner's
+   name and current balance.
+'''
+class BankAccount:
+    """
+    Represents a bank account.
+    Attributes:
+        owner (str): the name of the account owner
+        balance (float): the current account balance
+    """
+    
+    # initialize the account
+    
+    # deposit money into the account
+    
+    # withdraw money from the account
+    
+    # return a string representation of the account
+    
+   
+
+# create BankAccount objects
 
 
-table=load_table("data.csv")
-print(table)
-write(table,"data_copy_2.csv")
-
+   
