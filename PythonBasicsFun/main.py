@@ -142,7 +142,7 @@ def write(table,filename):
 '''
 Practice: BankAccount Class
 
-Create a class called BankAccount that represents a bank account.
+Define a class called BankAccount that represents a bank account.
 Your BankAccount class should:
 1. Use __init__() to initialize the following attributes:
    - owner: the name of the account owner
