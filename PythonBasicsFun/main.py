@@ -164,18 +164,41 @@ class BankAccount:
         owner (str): the name of the account owner
         balance (float): the current account balance
     """
-    
+  
     # initialize the account
-    
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.balance = balance
+     
     # deposit money into the account
-    
+    def deposit(self, amount):
+        self.balance += amount
+
     # withdraw money from the account
+
+    def withdraw(self, amount):
+        if self.balance >= amount:
+            self.balance -= amount
+        else:
+            print("Insufficient Amount")
+
     
     # return a string representation of the account
+    def __str__(self):
+        return f"{self.owner} has {self.balance} in the account"
+ 
+
     
-   
-
-# create BankAccount objects
 
 
-   
+if __name__ == "__main__":
+
+    # create BankAccount objects
+    bankacc1 =BankAccount("Jane", 2567.56)
+    bankacc1.deposit(1000)
+    bankacc1.withdraw(4000)
+    print(bankacc1)
+
+    bankacc2= BankAccount("Sam", 3500)
+    bankacc2.deposit(100.34)
+    print(bankacc2)
